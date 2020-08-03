@@ -1,0 +1,178 @@
+#create{
+background-color :lightgray;
+border: 1px solid black;
+width: 400px;
+height: 400px;
+display: block;
+position:fixed;
+top: 20%;
+left: 35%;
+text-align:center;
+}
+
+#demo {
+    background-color: white;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    display: block;
+    position:fixed;
+    top:22%;
+    left:38.5%;
+}
+
+.glo {
+    display: block;
+    position:fixed;
+    top: 46%;
+    left: 56.5%;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+}
+.joy{
+    display: block;
+    position:fixed;
+    top: 53%;
+    left: 56.5%;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px; 
+}
+.ade{
+    display: block;
+    position:fixed;
+    top: 60%;
+    left: 56.5%;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+}
+.ayo{
+    display: block;
+    position:fixed;
+    top: 67%;
+    left: 56.5%;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+}
+.pot{
+    display: block;
+    position:fixed;
+    top: 74%;
+    left: 56.5%;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+}
+.sev{
+    display: block;
+    position:fixed;
+    top: 53%;
+    left:35.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px; 
+}
+.eig{
+    display: block;
+    position:fixed;
+    top: 53%;
+    left: 42.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.nin{
+    display: block;
+    position:fixed;
+    top: 53%;
+    left: 49.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px; 
+}
+.for{
+    display: block;
+    position:fixed;
+    top: 60%;
+    left:35.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.fiv{
+    display: block;
+    position:fixed;
+    top: 60%;
+    left: 42.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.six{
+    display: block;
+    position:fixed;
+    top: 60%;
+    left: 49.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.one{
+    display: block;
+    position:fixed;
+    top: 67%;
+    left:35.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.two{
+    display: block;
+    position:fixed;
+    top: 67%;
+    left: 42.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.tre{
+    display: block;
+    position:fixed;
+    top: 67%;
+    left: 49.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+.sig{
+    display: block;
+    position:fixed;
+    top: 74%;
+    left:35.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+
+.zer{
+    display: block;
+    position:fixed;
+    top: 74%;
+    left: 42.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
+
+.dot{
+    display: block;
+    position:fixed;
+    top: 74%;
+    left: 49.5%;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+}
