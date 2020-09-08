@@ -132,6 +132,7 @@
                  display.textContent = keyContent
                 }
               };
+
             if (!action) {
               if (displayedNum === '0') {
                 display.textContent = keyContent
@@ -139,9 +140,11 @@
                 display.textContent = displayedNum + keyContent
               }
             };
+
             if (action === 'decimal') {
               display.textContent = displayedNum + '.'
             };
+
             if (
               action === 'add' ||
               action === 'subtract' ||
@@ -151,6 +154,10 @@
                 key.classList.add('is-depressed')
               };
         };
+       
+          
+        });
+
         keys.addEventListener('click', e => {
           if (e.target.matches('button')) {
             const key = e.target
@@ -161,8 +168,13 @@
             .forEach(k => k.classList.remove('is-depressed'))
           }
         });
+        
         const calculated = document.querySelector('.calculator')
         keys.addEventListener('click', e => {
+          const key = e.target
+          const action = key.dataset.action
+          const keyContent = key.textContent
+          const displayedNum = display.textContent
           if (e.target.matches('button')) {
             if (
               action === 'add' ||
@@ -175,7 +187,7 @@
                 calculated.dataset.previousKeyType = 'operator'
               }
           }
-          const previousKeyType = calculator.dataset.previousKeyType
+          const previousKeyType = calculated.dataset.previousKeyType
 
           if (!action) {
             if (displayedNum === '0' || previousKeyType === 'operator') {
@@ -194,36 +206,114 @@
               calculated.dataset.firstValue = displayedNum
               calculated.dataset.operator = action
           };
-          if (action === 'calculate') {
-            const firstValue = calculator.dataset.firstValue
-            const operator = calculator.dataset.operator
-  const secondValue = displayedNum
-  
-  display.textContent = calculate(firstValue, operator, secondValue)
-}
-  });
 
-// if (action === 'calculate') {
-//   const secondValue = displayedNum
-//   // ...
-const calculate = (n1, operator, n2) => {
-  let result = ''
+          const calculate = (n1, operator, n2) => {
+          let result = ''
   
-  if (operator === 'add') {
-    result = parseFloat(n1) + parseFloat(n2)
-  } else if (operator === 'subtract') {
-    result = parseFloat(n1) - parseFloat(n2)
-  } else if (operator === 'multiply') {
-    result = parseFloat(n1) * parseFloat(n2)
-  } else if (operator === 'divide') {
-    result = parseFloat(n1) / parseFloat(n2)
-  }
+          if (operator === 'add') {
+            result = parseInt(n1) + parseInt(n2)
+          } else if (operator === 'subtract') {
+            result = parseInt(n1) - parseInt(n2)
+          } else if (operator === 'multiply') {
+            result = parseInt(n1) * parseInt(n2)
+          } else if (operator === 'divide') {
+            result = parseInt(n1) / parseInt(n2)
+          }
   
-  return result
-}
-// if (!displayedNum.includes('.')) {
-//   display.textContent = displayedNum + '.'
-// }
-      
-</script>
+           return result
+        };
+
+          if (action === 'calculate') {
+            const firstValue = calculated.dataset.firstValue
+            const operator = calculated.dataset.operator
+            const secondValue = displayedNum
+  
+            display.textContent = calculate(firstValue, operator, secondValue)
+          }
+          // const firstValue = calculator.dataset.firstValue
+          //   const operator = calculator.dataset.operator
+          //   const secondValue = displayedNum
+  
+          // if (firstValue && operator) {
+          //   display.textContent = calculate(firstValue, operator, secondValue)
+          // }
+  
+          // key.classList.add('is-depressed')
+          // calculator.dataset.previousKeyType = 'operator'
+          // calculator.dataset.firstValue = displayedNum
+          // calculator.dataset.operator = action
+
+          // if (
+          //   firstValue &&
+          //   operator &&
+          //   previousKeyType !== 'operator'
+          // ) {
+          //   display.textContent = calculate(firstValue, operator, secondValue)
+          // }
+
+          const firstValue = calculated.dataset.firstValue
+          const operator = calculated.dataset.operator
+          const secondValue = displayedNum
+
+          if (
+              firstValue &&
+              operator &&
+              previousKeyType !== 'operator'
+          ) {
+            const calcValue = calculate(firstValue, operator, secondValue)
+            display.textContent = calcValue
+  
+            // Update calculated value as firstValue
+            calculator.dataset.firstValue = calcValue
+          } else {
+            // If there are no calculations, set displayedNum as the firstValue
+            calculator.dataset.firstValue = displayedNum
+          }
+
+          key.classList.add('is-depressed')
+          calculated.dataset.previousKeyType = 'operator'
+          calculated.dataset.operator = action
+
+        //   if (!action) {
+        //   // ...
+        //   calculator.dataset.previousKey = 'number'
+        // }
+
+        // if (action === 'decimal') {
+        //   if (!displayedNum.includes('.')) {
+        //     display.textContent = displayedNum + '.'
+        //   } else if (previousKeyType === 'operator') {
+        //     display.textContent = '0.'
+        //   }
+  
+        //   calculator.dataset.previousKeyType = 'decimal'
+        // }
+
+        // if (action === 'clear') {
+        //    // ...
+        //   calculator.dataset.previousKeyType = 'clear'
+        // }
+
+        // if (action === 'calculate') {
+        //   // ...
+        //   calculator.dataset.previousKeyType = 'calculate'
+        // };
+
+
+        });
+        // if (action === 'calculate') {
+        //   const secondValue = displayedNum
+        //   // ...
+        
+
+        // if (!displayedNum.includes('.')) {
+        //   display.textContent = displayedNum + '.'
+        // };
+        
+           
+
+        
+        
+    
+  </script>
 </html>
